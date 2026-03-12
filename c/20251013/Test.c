@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+
+
+
+
+int main(){
+    int score;
+    printf("pls enter the score:");
+    scanf("%d",&score);
+    int p = score / 10;
+
+    switch(p){
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:printf("D\n");
+            break;
+        case 6:printf("C\n");
+            break;
+        case 7:printf("B\n");
+            break;
+        case 8:
+        case 9:
+        case 10:printf("A\n");
+            break;
+        default:printf("??????????????????????");
+            break;
+    }
+
+
+    return 0;
+}
