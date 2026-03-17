@@ -14,23 +14,20 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
+        stage.setResizable(false);
         Button clickme = new Button("Click Me");
         Pane p = new Pane(clickme);
         Scene s = new Scene(p,800,450);
-        primaryStage.setScene(s);
+        stage.setScene(s);
         clickme.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                try{
-                    stop();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
                 
             }
         });
-        primaryStage.show();
+        stage.show();
     }
 
     @Override
