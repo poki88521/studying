@@ -1,11 +1,10 @@
 package FXDemo;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -16,17 +15,13 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setResizable(false);
-        Button clickme = new Button("Click Me");
-        Pane p = new Pane(clickme);
-        Scene s = new Scene(p,800,450);
-        stage.setScene(s);
-        clickme.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
 
-                
-            }
-        });
+        ImageView iv = new ImageView(new Image(getClass().getResourceAsStream("/resource/image/bird.png")));
+        StackPane root = new StackPane();
+        root.getChildren().add(iv);
+        Scene s = new Scene(root,800,450);
+        stage.setScene(s);
+
         stage.show();
     }
 

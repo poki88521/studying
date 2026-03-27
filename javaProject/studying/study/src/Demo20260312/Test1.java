@@ -45,6 +45,7 @@ class Rectangle{
     }
 
     public void setWidth(double width) {
+        if(width <= 0) throw new IllegalArgumentException("width is positive");
         this.width = width;
     }
 
