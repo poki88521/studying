@@ -10,10 +10,13 @@ public class TestGeometricObject {
         readData(figures);
         System.out.println("--排序前--");
         printInfo(figures);
+        /*
         Arrays.sort(figures, (o1, o2) -> {
                 return (int)(o1.getArea() - o2.getArea());
             });
+        */
 
+        Arrays.sort(figures);
         System.out.println("--排序后--");
         printInfo(figures);
         System.out.println("--计算总面积--");
@@ -47,10 +50,10 @@ public class TestGeometricObject {
 }
 
 
-abstract class GeometricObject implements Comparator<GeometricObject>{
+abstract class GeometricObject implements Comparable<GeometricObject>{
     @Override
-    public int compare(GeometricObject o1, GeometricObject o2) {
-        return (int)(o1.getArea() - o2.getArea());
+    public int compareTo(GeometricObject o) {
+        return (int)(this.getArea() - o.getArea());
     }
 
     public abstract double getArea();
